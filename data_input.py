@@ -55,24 +55,6 @@ class DataSet(object):
         t3 = np.concatenate([packed[2][::32, :, :, :] for i in range(32)], axis=0)
         t4 = np.concatenate([packed[3][::32, :, :, :] for i in range(32)], axis=0)
         batch = (t1, t2, t3, t4)
-        '''
-        total_psnr = 0.0
-        count = 0
-        for i in range(128):
-            im1 = t1[i, :, :, :]
-            im2 = t2[i, :, :, :]
-            label = t3[i, :, :, :]
-
-            im = np.zeros(label.shape).astype(np.float32)
-            im[:, :, 0:1] = im1
-            im[:, :, 1:3] = im2[:, :, 0:2]
-
-
-            total_psnr += measure.compare_psnr(im, label)
-            count += 1
-
-        print(total_psnr / count)
-        '''
 
         self.reference_batch = batch
 
