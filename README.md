@@ -56,6 +56,7 @@ We have written a demo code in `demo_predict.py`.
 ```console
 python demo_predict.py
 ```
+You can change the scale parameter in demo_predict.py file. You also need to change model name corresponding to the scale. There are 2x, 3x and 4x models.
 
 ## Training data
 We trained our network with [five middlebury stereo datasets](http://vision.middlebury.edu/stereo/data/) except cloth2, motorcycle, piano, pipes, sword2, which are used for test.
