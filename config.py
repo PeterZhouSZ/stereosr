@@ -42,6 +42,7 @@ import os
 from shift_stereo_bundle_color import ShiftStereoBundleColor
 from data_input import *
 
+scale = 2
 right_num_channels = 64
 number_of_layers = 16
 is_last_sigmoid = False
@@ -65,9 +66,9 @@ tf.app.flags.DEFINE_integer('label_size', 33,
 tf.app.flags.DEFINE_string('data_name', 'Motorcycle',
                            """Directory where to write event logs """)
 
-tf.app.flags.DEFINE_string('train_dir', 'models/n_shift_stereo_color_layer_%d_%d_%s_%s' % (right_num_channels, number_of_layers, is_last_sigmoid, is_last_relu),
+tf.app.flags.DEFINE_string('train_dir', 'models/x%d' % scale,
                            """Directory where to write event logs """)
-tf.app.flags.DEFINE_integer('scale', 2,
+tf.app.flags.DEFINE_integer('scale', scale,
                           """Directory where to write event logs """)
 tf.app.flags.DEFINE_integer('num_iter', 100000,
                          """Directory where to write event logs """)
@@ -90,7 +91,7 @@ tf.app.flags.DEFINE_boolean('is_last_relu', is_last_relu,
                            """Directory where to write event logs """)
 
 
-DATA_PATH = 'data/color_stereo_x2/'
+DATA_PATH = 'data/color_stereo_x%d/' % scale
 if os.path.isdir(DATA_PATH):
     DATA_SET = StereoDataSet(list(map(lambda fn: DATA_PATH + fn, os.listdir(DATA_PATH))))
 

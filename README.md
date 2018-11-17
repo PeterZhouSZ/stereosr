@@ -1,5 +1,3 @@
-## (This repository includes only the x2 model)
-
 # Enhancing the Spatial Resolution of Stereo Images using a Parallax Prior
 ![teaser](./paper-teaser.png "Paper Teaser")
 
