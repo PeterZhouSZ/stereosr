@@ -42,7 +42,7 @@ from matplotlib import pyplot as plt
 
 FLAGS = tf.app.flags.FLAGS
 
-sr_model = 'models/x4'
+sr_model = 'models/x2'
 
 
 def run_network(left_image, right_image):
@@ -161,7 +161,7 @@ def run_stereosr(left_image, right_image, output_path, scale):
 
 
 def main():
-    scale = 4
+    scale = 2
 
     # input paths
     path_im1 = 'data/cloth2/im1.png'
